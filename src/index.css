@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;600;700&display=swap");
 
 @theme {
   --font-sans: "Red Hat Text", sans-serif;
@@ -16,5 +15,5 @@
 }
 
 body {
-  @apply bg-rose-100 font-sans text-rose-900;
+  @apply bg-[#faf5f0] font-sans text-[#26160e];
 }

@@ -23,7 +23,7 @@ export default function CartDrawer({ isOpen, onClose, onConfirm }: CartDrawerPro
         }`}
       >
         <div className="mb-6 flex items-center justify-between">
-          <h2 className="text-2xl font-bold text-brand-red">Your Cart (0)</h2>
+          <h2 className="text-2xl font-bold text-brand-red">Tu Carrito (0)</h2>
           <button
             type="button"
             onClick={onClose}
@@ -37,7 +37,7 @@ export default function CartDrawer({ isOpen, onClose, onConfirm }: CartDrawerPro
         {/* Estado vacío */}
         <div className="flex flex-1 flex-col items-center justify-center gap-4 text-center">
           <img src="/images/illustration-empty-cart.svg" alt="" className="w-32" />
-          <p className="font-semibold text-rose-500">Your added items will appear here</p>
+          <p className="font-semibold text-rose-500">Los elementos que has añadido aparecerán aquí</p>
         </div>
 
         {/* Botón solo para visualizar el modal en el Nivel 1 */}
@@ -46,7 +46,7 @@ export default function CartDrawer({ isOpen, onClose, onConfirm }: CartDrawerPro
           onClick={onConfirm}
           className="w-full cursor-pointer rounded-full bg-brand-red py-4 font-semibold text-white transition-colors hover:bg-[hsl(14,86%,32%)]"
         >
-          Confirm Order
+          Confirmar Orden
         </button>
       </aside>
     </>
