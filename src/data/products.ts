@@ -1,14 +1,10 @@
 import type { Product } from "../types/product";
 
-const img = (slug: string) => ({
-  mobile: `/images/image-${slug}-mobile.jpg`,
-  tablet: `/images/image-${slug}-tablet.jpg`,
-  desktop: `/images/image-${slug}-desktop.jpg`,
-});
+const img = (slug: string) => `/images/${slug}.jpg`;
 
 export const products: Product[] = [
   { id: 1, name: "Waffle with Berries", category: "Waffle", price: 6.5, image: img("waffle") },
-  { id: 2, name: "Vanilla Bean Crème Brûlée", category: "Crème Brûlée", price: 7, image: img("creme-brulee") },
+  { id: 2, name: "Vanilla Bean Creme Brulee", category: "Creme Brulee", price: 7, image: img("creme-brulee") },
   { id: 3, name: "Macaron Mix of Five", category: "Macaron", price: 8, image: img("macaron") },
   { id: 4, name: "Classic Tiramisu", category: "Tiramisu", price: 5.5, image: img("tiramisu") },
   { id: 5, name: "Pistachio Baklava", category: "Baklava", price: 4, image: img("baklava") },
