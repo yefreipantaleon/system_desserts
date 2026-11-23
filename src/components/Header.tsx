@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 interface HeaderProps {
   onOpenCart: () => void;
 }
@@ -5,7 +7,7 @@ interface HeaderProps {
 export default function Header({ onOpenCart }: HeaderProps) {
   return (
     <header className="flex items-center justify-between border-b border-[#ede3da] pb-4">
-      <div className="flex items-center gap-2.5 text-[#26160e]">
+      <Link to="/" className="flex items-center gap-2.5 text-[#26160e]">
         <span className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-[#f5ebe2] text-[#9a4419]">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -14,7 +16,7 @@ export default function Header({ onOpenCart }: HeaderProps) {
         <span className="font-serif text-base font-semibold tracking-tight">
           Taller de repostería
         </span>
-      </div>
+      </Link>
 
       <button
         type="button"
