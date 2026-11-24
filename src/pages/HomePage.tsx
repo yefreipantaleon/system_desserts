@@ -4,7 +4,6 @@ import ProductCard from "../components/ProductCard";
 import ProductCardSkeleton from "../components/ProductCardSkeleton";
 import SearchBar from "../components/SearchBar";
 import StateMessage from "../components/StateMessage";
-import { useDebounce } from "../hooks/useDebounce";
 import { useProducts } from "../hooks/useProducts";
 
 const SKELETON_COUNT = 6;
@@ -13,7 +12,7 @@ export default function HomePage() {
   const [searchInput, setSearchInput] = useState("");
   const [category, setCategory] = useState("");
 
-  const search = useDebounce(searchInput.trim());
+  const search = searchInput.trim();
 
   const { data: products, isPending, isError, refetch } = useProducts({ search, category });
 

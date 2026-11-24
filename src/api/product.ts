@@ -1,14 +1,13 @@
 import { api } from "./client";
 import type { Category, Product, ProductFilters } from "../types/product";
 
-// json-server usa `name_like` como expresión regular: se escapan los caracteres especiales
 const escapeRegex = (text: string) => text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 export async function getProducts({ search, category }: ProductFilters): Promise<Product[]> {
   const { data } = await api.get<Product[]>("/products", {
     params: {
-      name_like: search ? escapeRegex(search) : undefined, // búsqueda por nombre en la API
-      category: category || undefined, // filtro por categoría en la API
+      name_like: search ? escapeRegex(search) : undefined,
+      category: category || undefined,
     },
   });
   return data;
