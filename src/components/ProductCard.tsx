@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import type { Product } from "../types/product";
 import QuantityStepper from "./QuantityStepper";
 
@@ -17,27 +18,29 @@ export default function ProductCard({ product, selectedQuantity }: ProductCardPr
           : "border border-[#ede3da] hover:border-[#dcc9b8]"
       }`}
     >
-      <div className="mb-4 overflow-hidden rounded-lg">
-        <picture>
-          <source media="(min-width: 1024px)" srcSet={product.image} />
-          <source media="(min-width: 640px)" srcSet={product.image} />
-          <img
-            src={product.image}
-            alt={product.name}
-            className="aspect-[4/3] w-full object-cover"
-          />
-        </picture>
-      </div>
+      <Link
+        to={`/producto/${product.id}`}
+        aria-label={`Ver detalle de ${product.name}`}
+        className="mb-4 block overflow-hidden rounded-lg"
+      >
+        <img
+          src={product.image}
+          alt={product.name}
+          className="aspect-[4/3] w-full object-cover transition-transform duration-300 hover:scale-105"
+        />
+      </Link>
 
       <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-[#8c6d5c]">
         {product.category}
       </p>
-      <h3 className="mt-1 text-base font-bold text-[#26160e]">{product.name}</h3>
+      <h3 className="mt-1 text-base font-bold text-[#26160e]">
+        <Link to={`/producto/${product.id}`} className="transition-colors hover:text-[#b84214]">
+          {product.name}
+        </Link>
+      </h3>
 
       <div className="mt-auto flex items-center justify-between gap-3 pt-4">
-        <p className="text-base font-bold text-[#26160e]">
-          ${product.price.toFixed(2)}
-        </p>
+        <p className="text-base font-bold text-[#26160e]">${product.price.toFixed(2)}</p>
 
         {isSelected ? (
           <QuantityStepper quantity={selectedQuantity} />

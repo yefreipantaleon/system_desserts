@@ -4,4 +4,15 @@ export interface Product {
   category: string;
   price: number;
   image: string;
+  description: string;
+}
+
+export interface Category {
+  id: number;
+  name: string;
+}
+
+export interface ProductFilters {
+  search: string;
+  category: string;
 }
