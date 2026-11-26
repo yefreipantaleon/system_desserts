@@ -1,8 +1,5 @@
 import { Link } from "react-router-dom";
-
-interface NotFoundPageProps {
-  message?: string;
-}
+import type { NotFoundPageProps } from "../interfaces/NotFoundPageProps";
 
 export default function NotFoundPage({ message = "La página que buscas no existe." }: NotFoundPageProps) {
   return (
