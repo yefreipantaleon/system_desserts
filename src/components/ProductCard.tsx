@@ -1,14 +1,21 @@
 import { Link } from "react-router-dom";
-import type { Product } from "../types/product";
+import { useCartStore } from "../stores/cartStore";
+import type { Product } from "../interfaces/product";
+import CartIcon from "./CartIcon";
+import CategoryBadge from "./CategoryBadge";
 import QuantityStepper from "./QuantityStepper";
 
 interface ProductCardProps {
   product: Product;
-  selectedQuantity?: number;
 }
 
-export default function ProductCard({ product, selectedQuantity }: ProductCardProps) {
-  const isSelected = selectedQuantity !== undefined;
+export default function ProductCard({ product }: ProductCardProps) {
+  const quantity = useCartStore((state) => state.items.find((item) => item.id === product.id)?.quantity ?? 0);
+  const addItem = useCartStore((state) => state.addItem);
+  const increaseQuantity = useCartStore((state) => state.increaseQuantity);
+  const decreaseQuantity = useCartStore((state) => state.decreaseQuantity);
+
+  const isSelected = quantity > 0;
 
   return (
     <article
@@ -30,10 +37,8 @@ export default function ProductCard({ product, selectedQuantity }: ProductCardPr
         />
       </Link>
 
-      <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-[#8c6d5c]">
-        {product.category}
-      </p>
-      <h3 className="mt-1 text-base font-bold text-[#26160e]">
+      <CategoryBadge categoryId={product.categoryId} />
+      <h3 className="mt-2 text-base font-bold text-[#26160e]">
         <Link to={`/producto/${product.id}`} className="transition-colors hover:text-[#b84214]">
           {product.name}
         </Link>
@@ -43,13 +48,18 @@ export default function ProductCard({ product, selectedQuantity }: ProductCardPr
         <p className="text-base font-bold text-[#26160e]">${product.price.toFixed(2)}</p>
 
         {isSelected ? (
-          <QuantityStepper quantity={selectedQuantity} />
+          <QuantityStepper
+            quantity={quantity}
+            onIncrease={() => increaseQuantity(product.id)}
+            onDecrease={() => decreaseQuantity(product.id)}
+          />
         ) : (
           <button
             type="button"
+            onClick={() => addItem(product)}
             className="flex cursor-pointer items-center justify-center gap-1.5 rounded-full border border-[#e3d6ca] bg-white px-3.5 py-1.5 text-xs font-semibold text-[#26160e] transition-colors hover:border-[#b84214] hover:text-[#b84214]"
           >
-            <img src="/images/icon-add-to-cart.svg" alt="" className="h-3.5 w-3.5" />
+            <CartIcon className="h-3.5 w-3.5" />
             Añadir al Carrito
           </button>
         )}

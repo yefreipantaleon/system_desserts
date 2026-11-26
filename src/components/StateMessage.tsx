@@ -1,12 +1,4 @@
-import type { ReactNode } from "react";
-
-interface StateMessageProps {
-  title: string;
-  description?: string;
-  actionLabel?: string;
-  onAction?: () => void;
-  icon?: ReactNode;
-}
+import type { StateMessageProps } from "../interfaces/StateMessageProps";
 
 export default function StateMessage({ title, description, actionLabel, onAction, icon }: StateMessageProps) {
   return (
