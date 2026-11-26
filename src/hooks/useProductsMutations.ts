@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { createProduct, deleteProduct, updateProduct } from "../services/productService";
-import { getErrorMessage } from "../services/errors";
+import { getErrorMessage } from "../services/errorService";
 import { useCartStore } from "../stores/cartStore";
 import type { ProductInput } from "../interfaces/product";
 
