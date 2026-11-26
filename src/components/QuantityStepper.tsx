@@ -1,13 +1,15 @@
 interface QuantityStepperProps {
   quantity: number;
+  onIncrease: () => void;
+  onDecrease: () => void;
 }
 
-// Componente puramente visual (Nivel 1): los botones no tienen lógica todavía.
-export default function QuantityStepper({ quantity }: QuantityStepperProps) {
+export default function QuantityStepper({ quantity, onIncrease, onDecrease }: QuantityStepperProps) {
   return (
     <div className="flex w-28 items-center justify-between rounded-full bg-[#b84214] px-2.5 py-1.5">
       <button
         type="button"
+        onClick={onDecrease}
         aria-label="Disminuir cantidad"
         className="flex size-5 cursor-pointer items-center justify-center rounded-full border border-white/80 transition-colors hover:bg-white [&:hover_path]:fill-[#b84214]"
       >
@@ -20,6 +22,7 @@ export default function QuantityStepper({ quantity }: QuantityStepperProps) {
 
       <button
         type="button"
+        onClick={onIncrease}
         aria-label="Aumentar cantidad"
         className="flex size-5 cursor-pointer items-center justify-center rounded-full border border-white/80 transition-colors hover:bg-white [&:hover_path]:fill-[#b84214]"
       >
