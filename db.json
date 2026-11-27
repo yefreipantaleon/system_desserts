@@ -1,24 +1,150 @@
 {
   "products": [
-    { "id": 1, "name": "Waffle with Berries", "category": "Waffle", "price": 6.5, "image": "/images/waffle.jpg", "description": "Waffle dorado y crujiente servido con crema batida y una mezcla de frutos rojos frescos." },
-    { "id": 2, "name": "Vanilla Bean Creme Brulee", "category": "Creme Brulee", "price": 7, "image": "/images/creme-brulee.jpg", "description": "Crema suave de vainilla con una capa de azúcar caramelizada que se rompe con la cuchara." },
-    { "id": 3, "name": "Macaron Mix of Five", "category": "Macaron", "price": 8, "image": "/images/macaron.jpg", "description": "Caja de cinco macarons artesanales en sabores surtidos, con relleno cremoso." },
-    { "id": 4, "name": "Classic Tiramisu", "category": "Tiramisu", "price": 5.5, "image": "/images/tiramisu.jpg", "description": "Capas de bizcocho empapado en café y crema de mascarpone, espolvoreado con cacao." },
-    { "id": 5, "name": "Pistachio Baklava", "category": "Baklava", "price": 4, "image": "/images/baklava.jpg", "description": "Hojaldre fino relleno de pistachos y bañado en almíbar de miel." },
-    { "id": 6, "name": "Lemon Meringue Pie", "category": "Pie", "price": 5, "image": "/images/meringue.jpg", "description": "Tarta de limón con base crujiente y un merengue tostado ligero como una nube." },
-    { "id": 7, "name": "Red Velvet Cake", "category": "Cake", "price": 4.5, "image": "/images/cake.jpg", "description": "Bizcocho aterciopelado de color rojo intenso con cobertura de queso crema." },
-    { "id": 8, "name": "Salted Caramel Brownie", "category": "Brownie", "price": 5.5, "image": "/images/brownie.jpg", "description": "Brownie húmedo de chocolate con un toque de caramelo salado." },
-    { "id": 9, "name": "Vanilla Panna Cotta", "category": "Panna Cotta", "price": 6.5, "image": "/images/panna-cotta.jpg", "description": "Postre italiano cremoso de vainilla con una textura suave y delicada." }
+    {
+      "id": "1",
+      "name": "Waffle with Berries",
+      "categoryId": 1,
+      "price": 6.5,
+      "image": "/images/waffle.jpg",
+      "description": "Waffle dorado y crujiente servido con crema batida y una mezcla de frutos rojos frescos."
+    },
+    {
+      "id": "2",
+      "name": "Vanilla Bean Creme Brulee",
+      "categoryId": 2,
+      "price": 7,
+      "image": "/images/creme-brulee.jpg",
+      "description": "Crema suave de vainilla con una capa de azúcar caramelizada que se rompe con la cuchara."
+    },
+    {
+      "id": "3",
+      "name": "Macaron Mix of Five",
+      "categoryId": 3,
+      "price": 8,
+      "image": "/images/macaron.jpg",
+      "description": "Caja de cinco macarons artesanales en sabores surtidos, con relleno cremoso."
+    },
+    {
+      "id": "4",
+      "name": "Classic Tiramisu",
+      "categoryId": 4,
+      "price": 5.5,
+      "image": "/images/tiramisu.jpg",
+      "description": "Capas de bizcocho empapado en café y crema de mascarpone, espolvoreado con cacao."
+    },
+    {
+      "id": "5",
+      "name": "Pistachio Baklava",
+      "categoryId": 5,
+      "price": 4,
+      "image": "/images/baklava.jpg",
+      "description": "Hojaldre fino relleno de pistachos y bañado en almíbar de miel."
+    },
+    {
+      "id": "6",
+      "name": "Lemon Meringue Pie",
+      "categoryId": 6,
+      "price": 5,
+      "image": "/images/meringue.jpg",
+      "description": "Tarta de limón con base crujiente y un merengue tostado ligero como una nube."
+    },
+    {
+      "id": "7",
+      "name": "Red Velvet Cake",
+      "categoryId": 7,
+      "price": 4.5,
+      "image": "/images/cake.jpg",
+      "description": "Bizcocho aterciopelado de color rojo intenso con cobertura de queso crema."
+    },
+    {
+      "id": "8",
+      "name": "Salted Caramel Brownie",
+      "categoryId": 8,
+      "price": 5.5,
+      "image": "/images/brownie.jpg",
+      "description": "Brownie húmedo de chocolate con un toque de caramelo salado."
+    },
+    {
+      "id": "9",
+      "name": "Vanilla Panna Cotta",
+      "categoryId": 9,
+      "price": 6.5,
+      "image": "/images/panna-cotta.jpg",
+      "description": "Postre italiano cremoso de vainilla con una textura suave y delicada."
+    },
+    {
+      "id": "10",
+      "name": "Chocolate Lava Cake",
+      "categoryId": 10,
+      "price": 6,
+      "image": "/images/lava-cake.jpg",
+      "description": "Bizcocho de chocolate con un centro líquido y caliente de chocolate fundido."
+    },
+    {
+      "id": "11",
+      "name": "Raspberry Cheesecake",
+      "categoryId": 11,
+      "price": 5.5,
+      "image": "/images/cheesecake.jpg",
+      "description": "Tarta de queso cremosa con una base de galleta y cobertura de frambuesa fresca."
+    },
+    {
+      "id": "12",
+      "name": "Coconut Cream Pie",
+      "categoryId": 12,
+      "price": 5,
+      "image": "/images/coconut-pie.jpg",
+      "description": "Tarta de crema de coco con una base crujiente y merengue dorado por encima."
+    }
   ],
   "categories": [
-    { "id": 1, "name": "Waffle" },
-    { "id": 2, "name": "Creme Brulee" },
-    { "id": 3, "name": "Macaron" },
-    { "id": 4, "name": "Tiramisu" },
-    { "id": 5, "name": "Baklava" },
-    { "id": 6, "name": "Pie" },
-    { "id": 7, "name": "Cake" },
-    { "id": 8, "name": "Brownie" },
-    { "id": 9, "name": "Panna Cotta" }
+    {
+      "id": "1",
+      "name": "Waffle"
+    },
+    {
+      "id": "2",
+      "name": "Creme Brulee"
+    },
+    {
+      "id": "3",
+      "name": "Macaron"
+    },
+    {
+      "id": "4",
+      "name": "Tiramisu"
+    },
+    {
+      "id": "5",
+      "name": "Baklava"
+    },
+    {
+      "id": "6",
+      "name": "Pie"
+    },
+    {
+      "id": "7",
+      "name": "Cake"
+    },
+    {
+      "id": "8",
+      "name": "Brownie"
+    },
+    {
+      "id": "9",
+      "name": "Panna Cotta"
+    },
+    {
+      "id": "10",
+      "name": "Lava Cake"
+    },
+    {
+      "id": "11",
+      "name": "Cheesecake"
+    },
+    {
+      "id": "12",
+      "name": "Coconut Cream Pie"
+    }
   ]
 }

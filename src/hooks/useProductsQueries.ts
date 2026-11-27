@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { isAxiosError } from "axios";
-import { getCategories, getProductById, getProducts } from "../api/product";
-import type { ProductFilters } from "../types/product";
+import { getCategories } from "../services/categoryService";
+import { getProductById, getProducts } from "../services/productService";
+import type { ProductFilters } from "../interfaces/product";
 
 export function useProducts(filters: ProductFilters) {
   return useQuery({
@@ -12,7 +13,7 @@ export function useProducts(filters: ProductFilters) {
 
 export function useProduct(id: string | undefined) {
   return useQuery({
-    queryKey: ["product", id],
+    queryKey: ["products", "detail", id],
     queryFn: () => getProductById(id as string),
     enabled: Boolean(id),
     retry: (failureCount, error) =>

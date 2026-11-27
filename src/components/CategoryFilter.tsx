@@ -1,8 +1,8 @@
-import { useCategories } from "../hooks/useProducts";
+import { useCategories } from "../hooks/useProductsQueries";
 
 interface CategoryFilterProps {
-  selected: string;
-  onSelect: (category: string) => void;
+  selected: number;
+  onSelect: (categoryId: number) => void;
 }
 
 const baseButton =
@@ -28,23 +28,26 @@ export default function CategoryFilter({ selected, onSelect }: CategoryFilterPro
     <div className="flex flex-wrap gap-2" role="group" aria-label="Filtrar por categoría">
       <button
         type="button"
-        onClick={() => onSelect("")}
-        aria-pressed={selected === ""}
-        className={`${baseButton} ${selected === "" ? activeButton : inactiveButton}`}
+        onClick={() => onSelect(0)}
+        aria-pressed={selected === 0}
+        className={`${baseButton} ${selected === 0 ? activeButton : inactiveButton}`}
       >
         Todos
       </button>
-      {categories?.map((category) => (
-        <button
-          key={category.id}
-          type="button"
-          onClick={() => onSelect(category.name)}
-          aria-pressed={selected === category.name}
-          className={`${baseButton} ${selected === category.name ? activeButton : inactiveButton}`}
-        >
-          {category.name}
-        </button>
-      ))}
+      {categories?.map((category) => {
+        const id = Number(category.id);
+        return (
+          <button
+            key={category.id}
+            type="button"
+            onClick={() => onSelect(id)}
+            aria-pressed={selected === id}
+            className={`${baseButton} ${selected === id ? activeButton : inactiveButton}`}
+          >
+            {category.name}
+          </button>
+        );
+      })}
     </div>
   );
 }
